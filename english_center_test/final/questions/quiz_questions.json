@@ -1,0 +1,532 @@
+{
+  "levels": [
+    {
+      "level": 1,
+      "description": "A1 - Beginner",
+      "questions": [
+        {
+          "id": 1,
+          "question": "I _____ a student.",
+          "options": ["am", "is", "are", "be"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 2,
+          "question": "She _____ to school every day.",
+          "options": ["go", "goes", "going", "went"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 3,
+          "question": "This is _____ book.",
+          "options": ["my", "I", "me", "mine"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 4,
+          "question": "_____ you like coffee?",
+          "options": ["Does", "Do", "Are", "Is"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 5,
+          "question": "They _____ in London.",
+          "options": ["lives", "live", "living", "lived"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 6,
+          "question": "What _____ your name?",
+          "options": ["are", "is", "am", "be"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 7,
+          "question": "I have _____ apple.",
+          "options": ["a", "an", "the", "some"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 8,
+          "question": "He _____ not like pizza.",
+          "options": ["do", "does", "is", "are"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 9,
+          "question": "_____ is your brother?",
+          "options": ["What", "Who", "Where", "When"],
+          "correctAnswer": 2
+        },
+        {
+          "id": 10,
+          "question": "We _____ happy today.",
+          "options": ["am", "is", "are", "be"],
+          "correctAnswer": 2
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "description": "A2 - Elementary",
+      "questions": [
+        {
+          "id": 11,
+          "question": "Yesterday, I _____ to the cinema.",
+          "options": ["go", "goes", "went", "going"],
+          "correctAnswer": 2
+        },
+        {
+          "id": 12,
+          "question": "She is _____ than her sister.",
+          "options": ["tall", "taller", "tallest", "more tall"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 13,
+          "question": "There _____ many people at the party.",
+          "options": ["was", "were", "is", "are"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 14,
+          "question": "I _____ study English every day.",
+          "options": ["must", "can", "should", "would"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 15,
+          "question": "He _____ his homework now.",
+          "options": ["do", "does", "is doing", "did"],
+          "correctAnswer": 2
+        },
+        {
+          "id": 16,
+          "question": "How _____ sugar do you need?",
+          "options": ["many", "much", "few", "little"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 17,
+          "question": "I have lived here _____ 2020.",
+          "options": ["for", "since", "from", "at"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 18,
+          "question": "She _____ to Paris last year.",
+          "options": ["go", "goes", "went", "has gone"],
+          "correctAnswer": 2
+        },
+        {
+          "id": 19,
+          "question": "This is the _____ interesting book I've ever read.",
+          "options": ["more", "most", "much", "many"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 20,
+          "question": "I don't have _____ money.",
+          "options": ["some", "any", "many", "few"],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "description": "B1 - Intermediate",
+      "questions": [
+        {
+          "id": 21,
+          "question": "If I _____ you, I would accept the job offer.",
+          "options": ["am", "was", "were", "be"],
+          "correctAnswer": 2
+        },
+        {
+          "id": 22,
+          "question": "She has _____ finished her work.",
+          "options": ["yet", "already", "still", "always"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 23,
+          "question": "The report _____ by the manager yesterday.",
+          "options": ["wrote", "was written", "is written", "has written"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 24,
+          "question": "I'm looking forward _____ you again.",
+          "options": ["to see", "to seeing", "see", "seeing"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 25,
+          "question": "He suggested _____ to the new restaurant.",
+          "options": ["go", "to go", "going", "went"],
+          "correctAnswer": 2
+        },
+        {
+          "id": 26,
+          "question": "By the time you arrive, I _____ dinner.",
+          "options": ["will finish", "will have finished", "finish", "finished"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 27,
+          "question": "She asked me _____ I had seen her keys.",
+          "options": ["that", "if", "what", "which"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 28,
+          "question": "I wish I _____ speak French fluently.",
+          "options": ["can", "could", "will", "would"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 29,
+          "question": "The movie was _____ boring that I fell asleep.",
+          "options": ["so", "such", "very", "too"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 30,
+          "question": "He's been working here _____ five years.",
+          "options": ["since", "for", "during", "while"],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "description": "B1+ - Upper Intermediate",
+      "questions": [
+        {
+          "id": 31,
+          "question": "The building _____ when we arrived at the scene.",
+          "options": ["was being demolished", "demolished", "is demolished", "has demolished"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 32,
+          "question": "I'd rather you _____ smoke in here.",
+          "options": ["don't", "didn't", "won't", "wouldn't"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 33,
+          "question": "_____ the weather, we decided to go hiking.",
+          "options": ["Despite", "Although", "However", "Because"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 34,
+          "question": "She's used _____ up early in the morning.",
+          "options": ["to get", "to getting", "get", "getting"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 35,
+          "question": "No sooner _____ the door than the phone rang.",
+          "options": ["I had opened", "had I opened", "I opened", "did I open"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 36,
+          "question": "The manager insisted that everyone _____ on time.",
+          "options": ["arrives", "arrive", "arrived", "will arrive"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 37,
+          "question": "I can't help _____ about what might have happened.",
+          "options": ["think", "to think", "thinking", "thought"],
+          "correctAnswer": 2
+        },
+        {
+          "id": 38,
+          "question": "_____ hard he tried, he couldn't solve the problem.",
+          "options": ["However", "Whatever", "Whenever", "Wherever"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 39,
+          "question": "The project should _____ by the end of the month.",
+          "options": ["complete", "be completed", "have completed", "completing"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 40,
+          "question": "She would have passed the exam if she _____ harder.",
+          "options": ["studied", "had studied", "studies", "has studied"],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "description": "B2 - Upper Intermediate",
+      "questions": [
+        {
+          "id": 41,
+          "question": "The committee _____ a decision by next week.",
+          "options": ["will have reached", "will reach", "reaches", "has reached"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 42,
+          "question": "_____ to the party, I would have met your sister.",
+          "options": ["If I went", "Had I gone", "If I go", "Should I go"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 43,
+          "question": "The proposal _____ by the board of directors tomorrow.",
+          "options": ["will be reviewing", "will be reviewed", "will review", "is reviewing"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 44,
+          "question": "She's _____ person I've ever met.",
+          "options": ["the most intelligent", "more intelligent", "most intelligent", "intelligenter"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 45,
+          "question": "It's high time we _____ action on climate change.",
+          "options": ["take", "took", "taken", "taking"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 46,
+          "question": "The witness claimed _____ the suspect near the crime scene.",
+          "options": ["to see", "seeing", "to have seen", "having seen"],
+          "correctAnswer": 2
+        },
+        {
+          "id": 47,
+          "question": "_____ the circumstances, I think we handled the situation well.",
+          "options": ["Considering", "Considered", "Consider", "To consider"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 48,
+          "question": "The company is _____ of expanding into new markets.",
+          "options": ["capable", "able", "possible", "probable"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 49,
+          "question": "Little _____ that this decision would change everything.",
+          "options": ["he knew", "did he know", "he did know", "knew he"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 50,
+          "question": "The research _____ for over a decade before the breakthrough.",
+          "options": ["was conducting", "had been conducted", "has been conducted", "conducted"],
+          "correctAnswer": 1
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "description": "B2+ - Advanced",
+      "questions": [
+        {
+          "id": 51,
+          "question": "The politician's speech was _____ with references to historical events.",
+          "options": ["littered", "peppered", "scattered", "sprinkled"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 52,
+          "question": "_____ the evidence presented, the jury reached a unanimous verdict.",
+          "options": ["In light of", "In spite of", "On account of", "With regard to"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 53,
+          "question": "The new policy has _____ considerable controversy among stakeholders.",
+          "options": ["aroused", "raised", "risen", "arisen"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 54,
+          "question": "Were it not for your assistance, the project _____ on time.",
+          "options": ["wouldn't complete", "wouldn't be completed", "wouldn't have been completed", "won't be completed"],
+          "correctAnswer": 2
+        },
+        {
+          "id": 55,
+          "question": "The author's writing style is _____ by its use of vivid imagery.",
+          "options": ["characterized", "featured", "distinguished", "marked"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 56,
+          "question": "The company's profits have been _____ declining over the past year.",
+          "options": ["steadily", "constantly", "continuously", "persistently"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 57,
+          "question": "The scientist's theory _____ widespread skepticism in the academic community.",
+          "options": ["met with", "came across", "ran into", "fell upon"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 58,
+          "question": "_____ circumstances would I agree to such terms.",
+          "options": ["Under no", "In no", "At no", "On no"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 59,
+          "question": "The negotiations proved _____ as both parties refused to compromise.",
+          "options": ["fruitless", "pointless", "useless", "worthless"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 60,
+          "question": "The report _____ the need for immediate action on the issue.",
+          "options": ["underscored", "underlined", "emphasized", "highlighted"],
+          "correctAnswer": 0
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "description": "C1 - Advanced",
+      "questions": [
+        {
+          "id": 61,
+          "question": "The committee's decision was _____ influenced by political considerations.",
+          "options": ["ostensibly", "purportedly", "allegedly", "supposedly"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 62,
+          "question": "The researcher's findings _____ conventional wisdom on the subject.",
+          "options": ["contradicted", "refuted", "challenged", "disputed"],
+          "correctAnswer": 2
+        },
+        {
+          "id": 63,
+          "question": "The economic downturn has had _____ effects on small businesses.",
+          "options": ["deleterious", "detrimental", "adverse", "harmful"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 64,
+          "question": "The author's argument is _____ by a lack of empirical evidence.",
+          "options": ["undermined", "weakened", "compromised", "diminished"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 65,
+          "question": "The diplomat's remarks were _____ as an attempt to ease tensions.",
+          "options": ["construed", "interpreted", "understood", "perceived"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 66,
+          "question": "The legislation aims to _____ the gap between rich and poor.",
+          "options": ["narrow", "reduce", "diminish", "lessen"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 67,
+          "question": "The company's success can be _____ to its innovative approach.",
+          "options": ["attributed", "ascribed", "credited", "assigned"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 68,
+          "question": "The judge's ruling set a _____ for future cases.",
+          "options": ["precedent", "example", "standard", "benchmark"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 69,
+          "question": "The scientist's theory has been _____ by subsequent research.",
+          "options": ["corroborated", "confirmed", "validated", "verified"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 70,
+          "question": "The politician's speech was criticized for its _____ nature.",
+          "options": ["inflammatory", "provocative", "contentious", "controversial"],
+          "correctAnswer": 0
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "description": "C1+ - Proficient",
+      "questions": [
+        {
+          "id": 71,
+          "question": "The philosopher's argument was _____ in its complexity and depth.",
+          "options": ["Byzantine", "labyrinthine", "convoluted", "intricate"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 72,
+          "question": "The author's prose is characterized by its _____ and eloquence.",
+          "options": ["lucidity", "clarity", "perspicuity", "transparency"],
+          "correctAnswer": 2
+        },
+        {
+          "id": 73,
+          "question": "The politician's _____ remarks alienated many of his supporters.",
+          "options": ["vitriolic", "acerbic", "caustic", "mordant"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 74,
+          "question": "The scientist's discovery has _____ implications for the field.",
+          "options": ["far-reaching", "profound", "momentous", "seminal"],
+          "correctAnswer": 3
+        },
+        {
+          "id": 75,
+          "question": "The committee's decision was met with _____ criticism from experts.",
+          "options": ["trenchant", "incisive", "penetrating", "acute"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 76,
+          "question": "The author's narrative style is _____ reminiscent of Victorian literature.",
+          "options": ["distinctly", "markedly", "conspicuously", "palpably"],
+          "correctAnswer": 1
+        },
+        {
+          "id": 77,
+          "question": "The diplomat's efforts to _____ the conflict proved unsuccessful.",
+          "options": ["ameliorate", "mitigate", "alleviate", "assuage"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 78,
+          "question": "The researcher's methodology was criticized for its _____ approach.",
+          "options": ["reductionist", "simplistic", "superficial", "cursory"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 79,
+          "question": "The economic policy has had _____ consequences for the middle class.",
+          "options": ["pernicious", "deleterious", "detrimental", "injurious"],
+          "correctAnswer": 0
+        },
+        {
+          "id": 80,
+          "question": "The scholar's work represents a _____ contribution to the field.",
+          "options": ["seminal", "groundbreaking", "pioneering", "innovative"],
+          "correctAnswer": 0
+        }
+      ]
+    }
+  ]
+}
