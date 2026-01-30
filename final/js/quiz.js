@@ -308,12 +308,34 @@ function finishQuiz() {
     const results = calculateResults();
     quizState.levelScores = results.levelScores;
     quizState.finalLevel = results.finalLevel;
-    
+
     displayResults(results);
     showScreen('results');
-    
-    // Send email with results
-    sendResultsEmail(results);
+
+    // ✅ Construir detalle por nivel: "Nivel 1 (A1): 10/10"
+    const levelBreakdownText = results.levelScores
+        .map(ls => `Nivel ${ls.level} (${ls.description}): ${ls.correct}/${ls.total}`)
+        .join('\n');
+
+    // ✅ Enviar email con datos del alumno + resultados
+    const emailPayload = {
+        userName: quizState.userData.name,
+        userEmail: quizState.userData.email,
+        userPhone: quizState.userData.phone,
+
+        finalLevel: results.finalLevel === 0 ? 'Pre-A1' : `Level ${results.finalLevel}`,
+        levelDescription: results.finalLevelDescription,
+
+        overallScore: `${Math.round((results.totalCorrect / results.totalQuestions) * 100)}% (${results.totalCorrect}/${results.totalQuestions})`,
+        levelBreakdown: levelBreakdownText,
+        testDate: new Date().toLocaleString(),
+
+        // opcionales por si los usas luego
+        totalCorrect: results.totalCorrect,
+        totalQuestions: results.totalQuestions
+    };
+
+    sendResultsEmail(emailPayload);
 }
 
 // Display results on results screen
