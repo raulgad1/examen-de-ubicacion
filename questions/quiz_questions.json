@@ -68,7 +68,7 @@
     },
     {
       "level": 2,
-      "description": "A2 - Elementary",
+      "description": "A1+ - Beginner plus",
       "questions": [
         {
           "id": 11,
@@ -134,7 +134,7 @@
     },
     {
       "level": 3,
-      "description": "B1 - Intermediate",
+      "description": "A2 - Elementary",
       "questions": [
         {
           "id": 21,
@@ -200,7 +200,7 @@
     },
     {
       "level": 4,
-      "description": "B1+ - Upper Intermediate",
+      "description": "A2+ - Elementary Advanced",
       "questions": [
         {
           "id": 31,
@@ -266,7 +266,7 @@
     },
     {
       "level": 5,
-      "description": "B2 - Upper Intermediate",
+      "description": "B1 - Intermediate",
       "questions": [
         {
           "id": 41,
@@ -332,7 +332,7 @@
     },
     {
       "level": 6,
-      "description": "B2+ - Advanced",
+      "description": "B1+ - Upper Intermediate",
       "questions": [
         {
           "id": 51,
@@ -398,7 +398,7 @@
     },
     {
       "level": 7,
-      "description": "C1 - Advanced",
+      "description": "B2 - Advanced",
       "questions": [
         {
           "id": 61,
@@ -464,7 +464,7 @@
     },
     {
       "level": 8,
-      "description": "C1+ - Proficient",
+      "description": "B2+ - Upper Advanced",
       "questions": [
         {
           "id": 71,
