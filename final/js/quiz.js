@@ -114,25 +114,17 @@ function displayQuestion() {
         return;
     }
     
-    // Update question text
     questionText.textContent = question.question;
-    
-    // Update level indicator
     currentLevel.textContent = `Level ${question.level} - ${question.levelDescription}`;
     
-    // Update question counter
     const questionNum = quizState.currentQuestionIndex + 1;
     questionNumber.textContent = questionNum;
     currentQuestionNum.textContent = questionNum;
     
-    // Update progress bar
     const progress = (questionNum / quizState.questions.length) * 100;
     progressBar.style.width = `${progress}%`;
     
-    // Display options
     displayOptions(question);
-    
-    // Update navigation buttons
     updateNavigationButtons();
 }
 
@@ -146,7 +138,6 @@ function displayOptions(question) {
         optionElement.textContent = option;
         optionElement.dataset.index = index;
         
-        // Check if this option was previously selected
         const userAnswer = quizState.userAnswers[quizState.currentQuestionIndex];
         if (userAnswer !== null && userAnswer === index) {
             optionElement.classList.add('selected');
@@ -159,10 +150,8 @@ function displayOptions(question) {
 
 // Handle option selection
 function selectOption(optionIndex) {
-    // Store the answer
     quizState.userAnswers[quizState.currentQuestionIndex] = optionIndex;
     
-    // Update UI
     const options = optionsContainer.querySelectorAll('.option');
     options.forEach((option, index) => {
         if (index === optionIndex) {
@@ -172,20 +161,16 @@ function selectOption(optionIndex) {
         }
     });
     
-    // Enable next button
     nextBtn.disabled = false;
 }
 
 // Update navigation buttons state
 function updateNavigationButtons() {
-    // Previous button
     prevBtn.disabled = quizState.currentQuestionIndex === 0;
     
-    // Next button
     const hasAnswer = quizState.userAnswers[quizState.currentQuestionIndex] !== null;
     nextBtn.disabled = !hasAnswer;
     
-    // Change next button text on last question
     if (quizState.currentQuestionIndex === quizState.questions.length - 1) {
         nextBtn.textContent = 'Finalizar';
     } else {
@@ -203,17 +188,14 @@ function goToPreviousQuestion() {
 
 // Go to next question
 function goToNextQuestion() {
-    // Check if we just completed a level (every 10 questions)
     const currentIndex = quizState.currentQuestionIndex;
     const questionsPerLevel = 10;
     
-    // If we're at the end of a level (questions 9, 19, 29, etc.)
     if ((currentIndex + 1) % questionsPerLevel === 0) {
         const currentLevel = Math.floor(currentIndex / questionsPerLevel) + 1;
         const levelStartIndex = (currentLevel - 1) * questionsPerLevel;
         const levelEndIndex = currentLevel * questionsPerLevel;
         
-        // Calculate score for the just-completed level
         let correctCount = 0;
         for (let i = levelStartIndex; i < levelEndIndex; i++) {
             const question = quizState.questions[i];
@@ -223,7 +205,6 @@ function goToNextQuestion() {
             }
         }
         
-        // If score is below 7, end the quiz immediately
         if (correctCount < 7) {
             finishQuiz();
             return;
@@ -234,12 +215,11 @@ function goToNextQuestion() {
         quizState.currentQuestionIndex++;
         displayQuestion();
     } else {
-        // Quiz completed
         finishQuiz();
     }
 }
 
-// Calculate scores and determine final level
+// Calculate scores and determine recommended level (cambio clave aquí)
 function calculateResults() {
     const results = {
         levelScores: [],
@@ -249,13 +229,13 @@ function calculateResults() {
         finalLevelDescription: ''
     };
     
-    // Calculate score for each level (10 questions per level)
     const questionsPerLevel = 10;
     const totalLevels = 8;
     
-    // Determine how many levels were actually attempted
     const lastAnsweredIndex = quizState.userAnswers.findLastIndex(answer => answer !== null);
     const levelsAttempted = lastAnsweredIndex >= 0 ? Math.floor(lastAnsweredIndex / questionsPerLevel) + 1 : 0;
+    
+    let highestPassedLevel = 0;
     
     for (let level = 1; level <= levelsAttempted; level++) {
         const startIndex = (level - 1) * questionsPerLevel;
@@ -288,22 +268,37 @@ function calculateResults() {
             passed: passed
         });
         
-        // Update final level (highest level with 7+ correct answers)
         if (passed) {
-            results.finalLevel = level;
-            results.finalLevelDescription = quizState.questions[startIndex].levelDescription;
+            highestPassedLevel = level;
         }
     }
     
-    // If user didn't pass any level, they are at level 0 (below A1)
-    if (results.finalLevel === 0) {
-        results.finalLevelDescription = 'Pre-A1';
+    // Lógica de nivel recomendado: siguiente al último aprobado
+    let recommendedLevel = highestPassedLevel + 1;
+    
+    if (highestPassedLevel === 0) {
+        recommendedLevel = 1;  // No aprobó nada → empieza en 1
     }
+    
+    if (recommendedLevel > totalLevels) {
+        recommendedLevel = totalLevels;
+        const maxStartIndex = (totalLevels - 1) * questionsPerLevel;
+        results.finalLevelDescription = quizState.questions[maxStartIndex].levelDescription + " (Nivel Máximo)";
+    } else {
+        const nextStartIndex = (recommendedLevel - 1) * questionsPerLevel;
+        if (nextStartIndex < quizState.questions.length) {
+            results.finalLevelDescription = quizState.questions[nextStartIndex].levelDescription;
+        } else {
+            results.finalLevelDescription = "Nivel Avanzado / Experto";
+        }
+    }
+    
+    results.finalLevel = recommendedLevel;
     
     return results;
 }
 
-// Finish quiz and show results
+// Finish quiz and show results + send email
 function finishQuiz() {
     const results = calculateResults();
     quizState.levelScores = results.levelScores;
@@ -312,25 +307,22 @@ function finishQuiz() {
     displayResults(results);
     showScreen('results');
 
-    // ✅ Construir detalle por nivel: "Nivel 1 (A1): 10/10"
     const levelBreakdownText = results.levelScores
-        .map(ls => `Nivel ${ls.level} (${ls.description}): ${ls.correct}/${ls.total}`)
+        .map(ls => `Nivel ${ls.level} (${ls.description}): ${ls.correct}/${ls.total} ${ls.passed ? '(Aprobado)' : '(No aprobado)'}`)
         .join('\n');
 
-    // ✅ Enviar email con datos del alumno + resultados
     const emailPayload = {
         userName: quizState.userData.name,
         userEmail: quizState.userData.email,
         userPhone: quizState.userData.phone,
 
-        finalLevel: results.finalLevel === 0 ? 'Pre-A1' : `Level ${results.finalLevel}`,
+        finalLevel: `Nivel ${results.finalLevel} (Recomendado)`,
         levelDescription: results.finalLevelDescription,
 
         overallScore: `${Math.round((results.totalCorrect / results.totalQuestions) * 100)}% (${results.totalCorrect}/${results.totalQuestions})`,
         levelBreakdown: levelBreakdownText,
         testDate: new Date().toLocaleString(),
 
-        // opcionales por si los usas luego
         totalCorrect: results.totalCorrect,
         totalQuestions: results.totalQuestions
     };
@@ -340,19 +332,12 @@ function finishQuiz() {
 
 // Display results on results screen
 function displayResults(results) {
-    // Display final level
     const finalLevelElement = document.getElementById('finalLevel');
     const levelDescriptionElement = document.getElementById('levelDescription');
     
-    if (results.finalLevel === 0) {
-        finalLevelElement.textContent = 'Pre-A1';
-        levelDescriptionElement.textContent = results.finalLevelDescription;
-    } else {
-        finalLevelElement.textContent = `Level ${results.finalLevel}`;
-        levelDescriptionElement.textContent = results.finalLevelDescription;
-    }
+    finalLevelElement.textContent = `Nivel ${results.finalLevel} (Recomendado)`;
+    levelDescriptionElement.textContent = results.finalLevelDescription;
     
-    // Display level breakdown
     const levelBreakdownElement = document.getElementById('levelBreakdown');
     levelBreakdownElement.innerHTML = '';
     
@@ -362,7 +347,7 @@ function displayResults(results) {
         
         levelResultElement.innerHTML = `
             <div>
-                <span class="level-name">Level ${levelScore.level} - ${levelScore.description}</span>
+                <span class="level-name">Nivel ${levelScore.level} - ${levelScore.description}</span>
             </div>
             <div>
                 <span class="level-score">${levelScore.correct}/${levelScore.total}</span>
@@ -372,7 +357,6 @@ function displayResults(results) {
         levelBreakdownElement.appendChild(levelResultElement);
     });
     
-    // Display summary
     document.getElementById('totalAnswered').textContent = results.totalQuestions;
     document.getElementById('totalCorrect').textContent = results.totalCorrect;
     
@@ -410,16 +394,12 @@ function showLoading(show) {
 
 // Restart quiz
 function restartQuiz() {
-    // Reset state
     quizState.currentQuestionIndex = 0;
     quizState.userAnswers = new Array(quizState.questions.length).fill(null);
     quizState.levelScores = [];
     quizState.finalLevel = 0;
     
-    // Reset form
     userForm.reset();
-    
-    // Show welcome screen
     showScreen('welcome');
 }
 
