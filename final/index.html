@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English Center Test</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
@@ -24,8 +22,8 @@ class="logo"
             <div class="info-box">
                 <h2>Cómo funciona:</h2>
                 <ul>
-                    <li>80 preguntas distribuidas en 8 niveles (A1 a B2+)</li>
-                    <li>10 preguntas por nivel</li>
+                    <li>56 preguntas distribuidas en 8 niveles (A1 a B2+)</li>
+                    <li>7 preguntas por nivel</li>
                     <li>Obtén 7 o más respuestas correctas para avanzar al siguiente nivel</li>
                     <li>Tu nivel final será determinado por tu desempeño</li>
                 </ul>
@@ -81,7 +79,7 @@ class="logo-small"
                         <span id="currentLevel" class="level-value">Level 1 - A1 Beginner</span>
                     </div>
                     <div class="question-counter">
-                        <span id="questionNumber">1</span> / <span id="totalQuestions">80</span>
+                        <span id="questionNumber">1</span> / <span id="totalQuestions">56</span>
                     </div>
                 </div>
             </div>
@@ -165,6 +163,7 @@ class="logo"
         <p>Cargando preguntas...</p>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="./js/quiz.js"></script>
     <script src="./js/email.js"></script>
 </body>
